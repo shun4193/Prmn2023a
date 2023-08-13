@@ -170,6 +170,7 @@ class Game_Scene:
                     enemy.repop(self.player.pos)
                 if self.player.hp == 0:
                     screen.fill((0, 0, 0))
+                    g.high_score == g.score
                     return self.gameover(screen)
             for bullet in self.player.bullets:
                 distance = abs(enemy.pos - bullet.pos)
@@ -187,6 +188,7 @@ class Game_Scene:
                         enemy_bullet.pos = np.array([10000, 10000], dtype=np.float64)
                         self.player.hp -= 1
                         if self.player.hp == 0:
+                            g.high_score = g.score
                             screen.fill((0, 0, 0))
                             return self.gameover(screen)
                     for player_bullet in self.player.bullets:

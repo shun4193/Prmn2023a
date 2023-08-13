@@ -35,12 +35,12 @@ class Player:
                 
         if self.pos[0] < 12.5: 
             self.pos[0] = 12.5
-        if self.pos[0] > 625.5:
-            self.pos[0] = 625.5
+        if self.pos[0] > g.width - 12.5:
+            self.pos[0] = g.width - 12.5
         if self.pos[1] < 12.5: 
             self.pos[1] = 12.5
-        if self.pos[1] > 465.5: 
-            self.pos[1] = 465.5
+        if self.pos[1] > g.height - 12.5: 
+            self.pos[1] = g.height - 12.5
 
         self.blit(screen)
         for bullet in self.bullets:

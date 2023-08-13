@@ -17,11 +17,11 @@ class Hiscore_Enemy(Enemy):
         if random.uniform(0, 100) < 1:
             self.pos_change *= 2
         self.pos += self.pos_change
-        if self.pos[0] < 12.5:
+        if self.pos[0] < 12.5: 
             self.pos[0] = 12.5
-        if self.pos[0] > 615:
-            self.pos[0] = 615
-        if self.pos[1] < 12.5:
+        if self.pos[0] > g.width - 12.5:
+            self.pos[0] = g.width - 12.5
+        if self.pos[1] < 12.5: 
             self.pos[1] = 12.5
-        if self.pos[1] > 455:
-            self.pos[1] = 455
+        if self.pos[1] > g.height - 12.5: 
+            self.pos[1] = g.height - 12.5

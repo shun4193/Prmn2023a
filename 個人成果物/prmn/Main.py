@@ -23,7 +23,7 @@ first_time = True
 first_write = True
 g.clock = pygame.time.Clock()
 g.db = DB()
-g.HighScore = g.db.sort_load()
+g.HighScore = g.db.load()
 
 while True:
     screen.fill((0, 0, 0))
@@ -45,7 +45,10 @@ while True:
         if key[pygame.K_ESCAPE] or event.type == pygame.QUIT:
             db_save_highscore()
             pygame.quit()
-            sys.exit()        
+            sys.exit()    
+        if event.type == pygame.VIDEORESIZE:
+                screen.fill((0, 0, 0))
+                g.width, g.height = screen.get_width(), screen.get_height()    
 
     if isinstance(now_scene, Game_Scene):
         if first_time:
@@ -94,5 +97,5 @@ while True:
             switch = 0
 
     pygame.display.update()
-    g.clock.tick(g.fps)
+    g.clock.tick(g.fps) 
     g.counter += 1

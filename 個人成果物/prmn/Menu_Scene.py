@@ -57,6 +57,7 @@ class Menu_Scene():
         screen.blit(date, (g.width / 2 - date.get_width() / 2, g.height / 2 - date.get_height() / 2 + 60))
 
     def ranking(self, screen):
+        self.db_save_highscore()
         g.HighScore = g.db.sort_load()
         font = pygame.font.SysFont("MS Gothic", 25)
         columns = font.render("順位" + " " + "ユーザー名" + " " + "ハイスコア" + " " + "更新日", True, (255, 255, 255))

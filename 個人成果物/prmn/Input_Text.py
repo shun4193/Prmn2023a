@@ -31,6 +31,10 @@ class Input_Text:
         running = True
         while running:
             for event in pygame.event.get():
+                if event.type == pygame.VIDEORESIZE:
+                    screen.fill((0, 0, 0))
+                    g.width, g.height = screen.get_width(), screen.get_height()
+                    self.draw_text(screen, input_text)
                 if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
                     pygame.quit()
                     sys.exit()
